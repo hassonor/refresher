@@ -37,3 +37,16 @@ async function inParallel() {
 }
 
 inParallel()
+
+
+// Using Promise.all to run multiple promises in parallel and log results when all are done
+async function usePromiseAll() {
+    try {
+        const results = await Promise.all([printNumber1(), printNumber2()]);  // Run both promises in parallel
+        console.log('Results from Promise.all:', results);  // Logs both results in an array [1, 2]
+    } catch (error) {
+        console.log('Error caught in Promise.all:', error.message);
+    }
+}
+
+usePromiseAll();  // Logs the results from both promises once they resolve
